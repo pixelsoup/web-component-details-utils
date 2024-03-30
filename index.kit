@@ -1,0 +1,90 @@
+<!-- https://htmlwithsuperpowers.netlify.app/using/examples/details-utils.html -->
+<!-- https://github.com/zachleat/details-utils/tree/main -->
+<!-- https://zachleat.github.io/details-utils/demo.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Simple Editable List Web Component</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/production.css">
+    <style>
+      /* Important CSS */
+      details-utils:not(:defined) [data-du-close-click] {
+        display: none;
+      }
+
+      /* Demo CSS */
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        padding-bottom: 80vh;
+      }
+
+      details {
+        border: 1px solid #ddd;
+        cursor: pointer;
+      }
+
+      summary {
+        padding: .5em;
+      }
+
+      .detailsPane {
+        border: 3px solid;
+        border: 1px solid #ccc;
+        background-color: #ddd;
+        background: #f9f9f9;
+        overflow: hidden; /* Important for animations */
+
+      }
+
+      .detailsPaneContent {
+        padding: 1em;
+        padding: 1rem;
+      }
+
+      /* Document Class Toggle (modal style) */
+      html.demo-no-overflow {
+        /* You can qualify this in a media query, too */
+        overflow: hidden;
+      }
+
+      details-utils[toggle-document-class]:defined .demo-modal-content {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        overflow: auto;
+        background-color: rgba(255,255,255,.95);
+      }
+      </style>
+  </head>
+<body>
+  <div class="containerPadded">
+    <details-utils close-click-outside="(min-width: 48em)" close-esc animate force-close>
+      <details>
+        <summary>Toggle Menu</summary>
+        <div class="detailsPane">
+          <div class="detailsPaneContent">
+            <p>This is the content.</p>
+            <p>This is the content.</p>
+            <p>This is the content.</p>
+            <p>This is the content.</p>
+            <p>This is the content.</p>
+            <p>This is the content.</p>
+            <p>This is the content.</p>
+            <p>This is the content.</p>
+            <p>This is the content.</p>
+          </div>
+          </div>
+      </details>
+    </details-utils>
+  </div>
+  <script type="module" src="./js/details-utils.js"></script>
+</body>
+</html>
